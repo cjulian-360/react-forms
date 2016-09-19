@@ -4,23 +4,25 @@ module.exports = function(config) {
         browsers: ['PhantomJS'],
         files: [
             {
-                pattern: 'spec/**/*Spec.js', watched: false
+                pattern: 'spec/**/*_spec.js',
+                watched: false
             }
         ],
         preprocessors: {
-            'spec/**/*Spec.js': ['webpack']
+            'spec/**/*_spec.js': ['webpack']
         },
         webpack: {
             module: {
-                loaders: [
-                    {
-                        test: /\.js/,
-                        exclude: /node_modules/,
-                        loader: 'babel-loader'
-                    }
-                ]
+                loaders: [{
+                    test: /\.js/,
+                    exclude: /node_modules/,
+                    loader: 'babel-loader'
+                }]
             },
             watch: true
+        },
+        webpackServer: {
+            noInfo: true
         }
     })
 }
