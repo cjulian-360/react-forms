@@ -1,28 +1,30 @@
+var path = require('path');
+
 module.exports = function(config) {
     config.set({
         frameworks: ['jasmine'],
         browsers: ['PhantomJS'],
         files: [
-            {
-                pattern: 'spec/**/*_spec.js',
-                watched: false
-            }
+            'spec/**/*.js'
         ],
         preprocessors: {
-            'spec/**/*_spec.js': ['webpack']
+            'spec/**/*.js': ['webpack']
         },
         webpack: {
             module: {
-                loaders: [{
-                    test: /\.js/,
-                    exclude: /node_modules/,
-                    loader: 'babel-loader'
-                }]
+                loaders: [
+                    {
+                        test: /\.js$/,
+                        exclude: /node_modules/,
+                        loader: 'babel'
+                    }
+                ]
             },
             watch: true
         },
         webpackServer: {
             noInfo: true
-        }
+        },
+        reporters: ['progress']
     })
 }

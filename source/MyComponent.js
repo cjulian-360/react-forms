@@ -1,14 +1,17 @@
 import React from 'react'
-import ReactDom from 'react-dom'
 
 export default React.createClass({
-    render() {
+    bar: function() {
+        this.refs.input.value = "bar";
+    },
+    render: function() {
         return (
             <div>
                 <h1>My App</h1>
                 <ul>
                     <li>hello</li>
                 </ul>
+                <input ref="input" type="Text" defaultValue="foo" onClick={this.bar}/>
             </div>
         )
     }
