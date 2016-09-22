@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/nyc --require babel-register ./node_modules/.bin/_mocha ./test"
+    "test": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,6 @@
     "babel": "^6.5.2",
     "babel-core": "^6.14.0",
     "babel-loader": "^6.2.5",
-    "babel-plugin-istanbul": "^2.0.1",
     "babel-plugin-transform-react-jsx": "^6.8.0",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
@@ -36,5 +35,25 @@
     "nyc": "^8.3.0",
     "react-addons-test-utils": "^15.3.1",
     "webpack": "^1.13.2"
+  },
+  "nyc": {
+    "include": [
+      "source/Calculator.js"
+    ],
+    "exclude": [
+      "spec/**/*.js"
+    ],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "extension": [
+      ".js"
+    ],
+    "cache": true,
+    "all": true
   }
 }
