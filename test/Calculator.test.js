@@ -1,6 +1,6 @@
 import { expect } from 'chai'
 
-import Calculator from '../source/Calculator'
+import Calculator from '../src/Calculator'
 describe('Calculator', ()=>{
     it('can add two numbers', function() {
         let c = new Calculator();

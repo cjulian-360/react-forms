@@ -5,7 +5,6 @@ export default class MyComponent extends React.Component {
         return (
             <div className="my-component">
                 <input ref="input" type="text" defaultValue="foo" onClick={this.bar.bind(this)}/>
-                <div>foo</div>
             </div>
         )
     }

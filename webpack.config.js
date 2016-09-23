@@ -1,13 +1,10 @@
-// not used yet
 module.exports = {
     entry: {
-        spec: [
-            '_MyFirstSpec.js'
-        ],
+        app: __dirname + '/src/app.js'
     },
     output: {
         filename: '[name].bundle.js',
-        path: __dirname + '/public/bundles'
+        path: __dirname + '/public/script/bundle'
     },
     module: {
         loaders: [

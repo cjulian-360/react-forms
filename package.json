@@ -1,7 +1,10 @@
 {
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel-register",
-    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test"
+    "test": "./node_modules/.bin/mocha --compilers js:babel-register ./test",
+    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test",
+    "build": "webpack -d",
+    "build-prod": "webpack -p --optimize-minimize",
+    "build-watch": "webpack -d --watch"
   },
   "devDependencies": {
     "babel": "^6.5.2",
