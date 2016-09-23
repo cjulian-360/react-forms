@@ -1,36 +1,42 @@
 import { expect } from 'chai'
 import React from 'react'
-import TestUtils from 'react-addons-test-utils'
-import jsdom from 'jsdom'
+import { shallow, mount } from 'enzyme'
 import MyComponent from '../source/MyComponent'
+import jsdom from 'jsdom'
 
 describe('MyComponent', ()=>{
-    let renderer;
-    let renderOutput;
-    jsdom.env('<div id="dom"></div>', ()=>{});
+    const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
+    global.document = doc;
+    global.window = doc.defaultView;
+    let wrapper = mount(<MyComponent/>);
 
-    before(()=>{
-        renderer = TestUtils.createRenderer();
-    });
-    beforeEach(()=>{
-        renderer.render(<MyComponent/>)
-        renderOutput = renderer.getRenderOutput();
+    it('renders', ()=>{
+        expect(wrapper.find('div.my-component')).to.have.length(1);
     });
 
-    it('renders a div', ()=>{
-        expect(renderOutput.type).to.equal('div');
+    it('contains an text input field', ()=>{
+        expect(wrapper.find('input[type="text"]')).to.have.length(1);
     });
 
     describe('text input field', ()=>{
         let input;
 
         beforeEach(()=>{
-            input = Object.assign({}, renderOutput.props.children[0]);
+            wrapper = mount(<MyComponent/>);
+            input = wrapper.find('input[type="text"]');
         });
 
-        it('renders a text input with default value of "foo"', ()=>{
-            expect(input.type).to.equal('input');
-            expect(input.props.type).to.equal('text');
+        it('renders', ()=>{
+            expect(input).to.exist;
+        });
+
+        it('has a default value of "foo"', ()=>{
+            expect(input.node.value).to.equal('foo');
+        });
+
+        it('has a value of "bar" after being clicked', ()=>{
+            input.simulate('click');
+            expect(input.node.value).to.equal('bar');
         });
     })
 });

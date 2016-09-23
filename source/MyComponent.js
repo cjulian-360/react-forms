@@ -6,7 +6,7 @@ export default React.createClass({
     },
     render: function() {
         return (
-            <div>
+            <div className="my-component">
                 <input ref="input" type="text" defaultValue="foo" onClick={this.bar}/>
                 <div>foo</div>
             </div>
