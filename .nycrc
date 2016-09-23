@@ -1,0 +1,18 @@
+{
+  "include": [
+    "source/**/*js"
+  ],
+  "exclude": [
+    "test/**/*.js"
+  ],
+  "reporter": [
+    "lcov",
+    "text-summary"
+  ],
+  "require": [
+    "babel-register"
+  ],
+  "extension": [
+    ".js"
+  ]
+}

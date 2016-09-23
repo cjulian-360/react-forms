@@ -1,25 +1,7 @@
 {
-  "name": "react-forms",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-register",
     "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cjulian/react-forms.git"
-  },
-  "keywords": [
-    "react",
-    "forms"
-  ],
-  "author": "Carlo Julian",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -37,25 +19,9 @@
     "jsdom": "^9.5.0",
     "mocha": "^3.0.2",
     "nyc": "^8.3.0",
+    "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
+    "react-dom": "^15.3.1",
     "webpack": "^1.13.2"
-  },
-  "nyc": {
-    "include": [
-      "source/**/*js"
-    ],
-    "exclude": [
-      "test/**/*.js"
-    ],
-    "reporter": [
-      "lcov",
-      "text-summary"
-    ],
-    "require": [
-      "babel-register"
-    ],
-    "extension": [
-      ".js"
-    ]
   }
 }

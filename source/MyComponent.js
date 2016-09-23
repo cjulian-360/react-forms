@@ -1,15 +1,15 @@
 import React from 'react'
 
-export default React.createClass({
-    bar: function() {
-        this.refs.input.value = "bar";
-    },
-    render: function() {
+export default class MyComponent extends React.Component {
+    render() {
         return (
             <div className="my-component">
-                <input ref="input" type="text" defaultValue="foo" onClick={this.bar}/>
+                <input ref="input" type="text" defaultValue="foo" onClick={this.bar.bind(this)}/>
                 <div>foo</div>
             </div>
         )
     }
-})
+    bar() {
+        this.refs.input.value = "bar";
+    }
+}

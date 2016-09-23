@@ -1,8 +1,8 @@
 import { expect } from 'chai'
 import React from 'react'
 import { shallow, mount } from 'enzyme'
-import MyComponent from '../source/MyComponent'
 import jsdom from 'jsdom'
+import MyComponent from '../source/MyComponent'
 
 describe('MyComponent', ()=>{
     const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
