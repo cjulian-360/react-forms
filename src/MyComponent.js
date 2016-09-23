@@ -1,4 +1,5 @@
 import React from 'react'
+import '../sass/MyComponent.scss'
 
 export default class MyComponent extends React.Component {
     render() {

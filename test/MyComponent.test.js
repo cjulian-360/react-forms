@@ -1,7 +1,7 @@
 import { expect } from 'chai'
-import React from 'react'
-import { shallow, mount } from 'enzyme'
+import { mount } from 'enzyme'
 import jsdom from 'jsdom'
+import React from 'react'
 import MyComponent from '../src/MyComponent'
 
 describe('MyComponent', ()=>{
