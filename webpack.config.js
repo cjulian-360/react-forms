@@ -10,6 +10,11 @@ module.exports = {
         path: __dirname + '/public/bundle'
     },
     devtool: "eval",
+    devServer:{
+        contentBase: 'public',
+        inline: true,
+        hot: true
+    },
     module: {
         loaders: [
             {
@@ -19,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader?sourceMap!sass-loader?sourceMap!postcss-loader?sourceMap")
+                loader: ExtractTextPlugin.extract("style", "css?sourceMap!sass?sourceMap!postcss?sourceMap")
             },
         ]
     },

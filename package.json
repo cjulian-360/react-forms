@@ -7,7 +7,8 @@
     "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test",
     "build": "webpack -d",
     "build-prod": "webpack -p --optimize-minimize",
-    "build-watch": "webpack -d --watch"
+    "build-watch": "webpack -d --watch",
+    "dev-server": "./node_modules/.bin/webpack-dev-server"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
