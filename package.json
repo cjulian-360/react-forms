@@ -1,4 +1,6 @@
 {
+  "name": "react-forms",
+  "version": "1.0.0",
   "scripts": {
     "test": "./node_modules/.bin/mocha --compilers js:babel-register ./test",
     "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test",
