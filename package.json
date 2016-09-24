@@ -2,13 +2,13 @@
   "name": "react-forms",
   "version": "1.0.0",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --compilers js:babel-register ./test",
+    "test": "./node_modules/.bin/mocha --require ignore-styles --compilers js:babel-register ./test",
     "test-watch": "npm run test -- --watch",
-    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha ./test",
-    "build": "webpack -d",
-    "build-prod": "webpack -p --optimize-minimize",
-    "build-watch": "webpack -d --watch",
-    "dev-server": "./node_modules/.bin/webpack-dev-server"
+    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha --require ignore-styles ./test",
+    "build": "webpack",
+    "build-prod": "NODE_ENV=production webpack",
+    "build-watch": "webpack --watch",
+    "dev-server": "./node_modules/.bin/webpack-dev-server --inline --hot --content-base public"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
@@ -24,6 +24,7 @@
     "css-loader": "^0.25.0",
     "enzyme": "^2.4.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "ignore-styles": "^5.0.1",
     "istanbul": "^0.4.5",
     "istanbul-react": "^1.1.0",
     "jsdom": "^9.5.0",
