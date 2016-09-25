@@ -1,8 +1,8 @@
-import { expect } from 'chai'
-import { mount } from 'enzyme'
-import jsdom from 'jsdom'
-import React from 'react'
-import MyComponent from '../src/MyComponent'
+import { expect } from 'chai';
+import { mount } from 'enzyme';
+import jsdom from 'jsdom';
+import React from 'react';
+import MyComponent from '../src/MyComponent';
 
 describe('MyComponent', ()=>{
     const doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
@@ -38,5 +38,5 @@ describe('MyComponent', ()=>{
             input.simulate('click');
             expect(input.node.value).to.equal('bar');
         });
-    })
+    });
 });
