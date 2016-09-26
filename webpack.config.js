@@ -5,14 +5,14 @@ var autoprefixer = require('autoprefixer');
 var devConfig = {
     debug: true,
     devtool: 'cheap-module-source-map',
-    loader: 'style!css?sourceMap!sass?sourceMap!postcss?sourceMap',
+    sassLoader: 'style!css?sourceMap!sass?sourceMap!postcss?sourceMap',
     plugins: []
 };
 
 var prodConfig = {
     debug: false,
     devtool: 'source-map',
-    loader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap!postcss?sourceMap'),
+    sassLoader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap!postcss?sourceMap'),
     plugins: [
         new webpack.DefinePlugin({
             'process.env':{
@@ -48,7 +48,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: config.loader
+                loader: config.sassLoader
             },
         ]
     },
