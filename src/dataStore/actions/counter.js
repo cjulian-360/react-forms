@@ -6,14 +6,14 @@ const actionTypes = {
 const increment = () => {
     return {
         type: actionTypes.INCREMENT
-    }
-}
+    };
+};
 
 const decrement = () => {
     return {
         type: actionTypes.DECREMENT
-    }
-}
+    };
+};
 
 export {
     actionTypes,

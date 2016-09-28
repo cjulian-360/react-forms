@@ -2,9 +2,9 @@
   "name": "react-forms",
   "version": "1.0.0",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require ignore-styles --compilers js:babel-register ./test",
+    "test": "./node_modules/.bin/mocha --require ignore-styles --compilers js:babel-register --recursive ./test",
     "test-watch": "npm run test -- --watch",
-    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha --require ignore-styles ./test || true",
+    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha --require ignore-styles --recursive ./test || true",
     "lint": "eslint './src/**/*.js' './test/**/*.js' || true",
     "lint-watch": "./node_modules/.bin/nodemon --watch src --watch test --exec 'npm run lint'",
     "build": "webpack",
