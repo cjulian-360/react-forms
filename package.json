@@ -2,15 +2,15 @@
   "name": "react-forms",
   "version": "1.0.0",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require ignore-styles --compilers js:babel-register --recursive ./test",
+    "test": "mocha --require ignore-styles --compilers js:babel-register --recursive ./test",
     "test-watch": "npm run test -- --watch",
-    "cov": "./node_modules/.bin/nyc ./node_modules/.bin/_mocha --require ignore-styles --recursive ./test || true",
-    "lint": "eslint './src/**/*.js' './test/**/*.js' || true",
-    "lint-watch": "./node_modules/.bin/nodemon --watch src --watch test --exec 'npm run lint'",
+    "cov": "nyc ./node_modules/.bin/_mocha --require ignore-styles --recursive ./test",
+    "lint": "eslint \"./src/**/*.js\" \"./test/**/*.js\"",
+    "lint-watch": "nodemon --watch src --watch test --exec \"npm run lint\"",
     "build": "webpack",
     "build-watch": "webpack --watch",
     "build-prod": "NODE_ENV=production webpack",
-    "dev-server": "./node_modules/.bin/webpack-dev-server --inline --hot --content-base public --open"
+    "dev-server": "webpack-dev-server --inline --hot --content-base public --open"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
