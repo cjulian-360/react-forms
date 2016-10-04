@@ -9,7 +9,7 @@ import { fundsFetch } from "./dataStore/actions/funds";
 
 @connect((store) => {
   return {
-    data: store
+    data: store.funds
   };
 })
 class Funds extends React.Component {

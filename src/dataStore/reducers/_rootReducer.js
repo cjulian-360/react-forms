@@ -1,13 +1,12 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
-import colors from './colors';
+import counterReducer from './counter';
+import colorsReducer from './colors';
 import fundsReducer from './funds';
 
 const rootReducer = combineReducers({
-    counterReducer,
-    fundsReducer
-    counter,
-    colors
+    funds: fundsReducer,
+    counter: counterReducer,
+    colors: colorsReducer
 });
 
 export default rootReducer;
