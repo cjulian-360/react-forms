@@ -13,7 +13,7 @@ import '../sass/style.scss';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(logger))
+    composeEnhancers(applyMiddleware(logger()))
 );
 
 ReactDOM.render(
