@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import counterReducer from './counter';
+import counter from './counter';
+import colors from './colors';
 
 const rootReducer = combineReducers({
-    counterReducer
+    counter,
+    colors
 });
 
 export default rootReducer;

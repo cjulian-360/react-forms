@@ -5,8 +5,10 @@ var autoprefixer = require('autoprefixer');
 var devConfig = {
     debug: true,
     devtool: 'cheap-module-source-map',
-    sassLoader: 'style!css?sourceMap!sass?sourceMap!postcss?sourceMap',
-    plugins: []
+    sassLoader: ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap!postcss?sourceMap'),
+    plugins: [
+        new ExtractTextPlugin('[name].bundle.css')
+    ]
 };
 
 var prodConfig = {
