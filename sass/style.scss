@@ -1,4 +1,17 @@
 body {
-  color: red;
   display: flex;
+}
+
+.funds-filters div{
+    margin: 0 5px;
+}
+
+.fund-year-dropdown {
+    display: inline-block;
+    width: 80px;
+}
+
+.fund-name-dropdown {
+    display: inline-block;
+    width: 220px;
 }
